@@ -12,5 +12,4 @@ const ComingSoon = ({ title }) => (
     </div>
   </PageShell>
 );
-
 export default ComingSoon;
