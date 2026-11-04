@@ -7,11 +7,12 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
-  // The backend does not allow localhost origins yet, so proxy API calls in dev.
+  // Only used if .env switches to VITE_API_BASE_URL=/api/v1 (e.g. if the dev
+  // backend's CORS ever stops allowing localhost). Same host as .env.
   server: {
     proxy: {
       '/api': {
-        target: 'https://cms-backend-nw6j.onrender.com',
+        target: 'https://api-dev.buildfree.dev',
         changeOrigin: true,
       },
     },
